@@ -1,0 +1,26 @@
+<ion-view view-title="">
+    <ion-content class="padding" ng-controller="HelperController">
+	    <br><button class="button  button-royal button-full icon-left ion-ios-telephone" ng-click="getContacts()">Get My Contacts</button>
+		
+		<form ng-submit="Save()" >
+		<div class="list" ng-show="phoneContacts">
+            <div class="card" ng-repeat="contact in phoneContacts">
+              <div class="item item-divider">
+                {{ contact.nameContact}}
+              </div>
+              <div class="item item-text-wrap">
+                <p><strong>Phone</strong></p>
+				<li class="item item-checkbox checkbox-royal">
+				<p>{{ contact.phone }}</p>
+				<label class="checkbox">
+				<input type="checkbox" ng-model="phones[contact.phone]" ng-change="print()">
+				</label>
+				</li>
+              </div>
+            </div> 
+    	
+		<button class="button button-royal button-full icon-left ion-funnel">Select</button><br><br>
+        </div> 
+		</form>
+    </ion-content>
+</ion-view>
